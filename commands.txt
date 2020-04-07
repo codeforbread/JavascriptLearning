@@ -1,0 +1,36 @@
+#####  To clone with repository  ##### 
+
+git clone https://github.com/codeforbread/JavascriptLearning.git
+
+
+#####  To display info about email and username  ##### 
+
+git config --list
+
+
+##### Issue :- fatal: not in a git directory #####
+
+/JavascriptProject$ git config user.name "abc"
+fatal: not in a git directory  #####
+
+@@@@@ Solution @@@@@@@
+
+/JavascriptProject$ git init
+
+
+#####  To set username for local repository  ##### 
+
+git config user.name "username"
+
+
+#####  To set useremail for local repository  ##### 
+
+git config user.email "useremail@gmail.com"
+
+#####  To create new txt file   ##### 
+
+touch gitcommands.txt
+
+#####  To create new branch   ##### 
+
+git checkout -b develop
