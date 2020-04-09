@@ -1,0 +1,109 @@
+// simple alert
+alert()
+www.google.com says
+
+                OK
+
+
+
+// alert with argument
+alert("hi Rock")
+
+//output
+www.google.com says
+hi Rock
+                OK
+
+
+
+//Declare a Function
+function welcomeRock(){
+    alert("Welcome Rock.")
+}
+
+//Call to function using function name and parentheses
+welcomeRock();
+welcomeRock();
+
+//output
+www.google.com says
+Welcome Rock.
+                OK
+www.google.com says
+Welcome Rock.
+                OK
+
+
+
+//Passing argument to function
+function welcomeByName(yourName){
+    alert("Welcome " + yourName + ".")
+}
+
+//Call to function using function name and parentheses and sending name parameter
+welcomeByName("Rock Star");
+welcomeByName("John Son");
+
+//output
+www.google.com says
+Welcome Rock Star.
+                OK
+www.google.com says
+Welcome John Son.
+                OK
+
+
+
+//if two argument are sent by calling function but we have only one argument in called function then it will take first argument from calling function
+//Called Function accepts one argument ie firstname
+function showFirstNameLastName(firstName){
+    alert("Your name is " + firstName + ".")
+}
+
+//Call to function using function fistname and lastname values
+showFirstNameLastName("Rock", "Star");
+showFirstNameLastName("John", "Son");
+
+//output
+www.google.com says
+Your name is Rock.
+                OK
+www.google.com says
+Your name is John.
+                OK
+
+
+
+//Called Function accepts two arguments
+function showFirstNameLastName(firstName, lastName, noname){
+    alert("Your firstname is " + firstName + " and lastname is " + lastName + "." )
+}
+
+//Call to function using function fistname and lastname values
+showFirstNameLastName("Rock", "Star");
+showFirstNameLastName("John", "Son");
+
+//output
+www.google.com says
+Your firstname is Rock and lastname is Star.
+                OK
+www.google.com says
+Your firstname is John and lastname is Son.
+                OK
+
+
+
+//Function to return square of number
+function calculateSquare(number){
+    return number * number;
+}
+
+num = 5;
+//call to function calculateSquare
+squareValue = calculateSquare(num);
+alert("Square of " + num + " is " + squareValue + ".");
+
+//output
+www.google.com says
+Square of 5 is 25.
+                OK

@@ -1,0 +1,38 @@
+//We can perform basic math operations
+2 + 2
+4
+5 * 5
+25
+
+
+// Javascript allows to store data in variable
+let myFavoriteNumber = 14
+undefined
+10 + myFavoriteNumber
+24
+let myName = 'rock'
+undefined
+myName
+"rock"
+'Hello, my name is ' + myName + '.'
+"Hello, my name is rock."
+
+
+// Js considers string if we enclose number in quotes
+'2' + '2'
+"22"
+
+
+//Display title of the page 
+document.title
+"Google"
+// now i will change Google title to Rock on
+document.title = 'Rock on'
+"Rock on"
+
+
+//Change background color of the page 
+document.body.style.backgroundColor = 'black'
+"black"
+
+
