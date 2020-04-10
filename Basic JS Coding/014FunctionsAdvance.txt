@@ -1,0 +1,121 @@
+//simple function that takes variable as input
+function getSquareOfNumber(number){
+    return number * number;
+}
+
+document.write(getSquareOfNumber(5));
+
+//output
+25
+
+
+
+//document is a object that contains all properties and methods of webpage
+//addEventListner takes 2 arguments (event , action)
+document.addEventListener("click",performAction)
+
+function performAction(){
+    alert("Hey you! clicked on screen");
+}
+
+//output (we will get output only when we click on the screen)
+www.google.com says
+Hey you! clicked on screen
+                OK
+
+
+
+//Javascript also allows to return function
+//Javascript also allows to assign function to variable
+//lets create program that will first take square of number and then multiply by another numbersArray
+function getSquareOfNumber(number){
+    return function(multiplyByNumber){
+        return number * number * multiplyByNumber;
+    }
+}
+
+let doubleSquareValue = getSquareOfNumber(2);
+let tripleSquareValue = getSquareOfNumber(3);
+let quadrupleSquareValue = getSquareOfNumber(4);
+
+//This will display that variable doubleSquareValue has function assigned to it
+document.writeln(doubleSquareValue);
+
+//To get the value we pass arguement to variable (doubleSquareValue) that has function assigned to it
+document.writeln(doubleSquareValue(2));
+
+
+//output
+function(multiplyByNumber){ return number * number * multiplyByNumber; } 
+8
+
+
+
+//Lets display all values using variable name and arguement
+function getSquareOfNumber(number){
+    return function(multiplyByNumber){
+        return number * number * multiplyByNumber;
+    }
+}
+
+let doubleSquareValue = getSquareOfNumber(2);
+let tripleSquareValue = getSquareOfNumber(3);
+let quadrupleSquareValue = getSquareOfNumber(4);
+
+document.writeln(doubleSquareValue(2));
+document.writeln(tripleSquareValue(3));
+document.writeln(quadrupleSquareValue(4));
+
+//output
+8
+27
+64
+
+
+
+//There is some bug in document.writeln output
+//But notice in console log we are getting proper answer
+function getSquareOfNumber(number){
+    square = number * number;
+    return function(multiplyByNumber){
+        return square * multiplyByNumber;
+    }
+}
+
+let doubleSquareValue = getSquareOfNumber(2);
+let tripleSquareValue = getSquareOfNumber(3);
+let quadrupleSquareValue = getSquareOfNumber(4);
+
+document.writeln(doubleSquareValue(2));
+document.writeln(tripleSquareValue(3));
+document.writeln(quadrupleSquareValue(4));
+
+console.log(getSquareOfNumber(2)(2));
+console.log(getSquareOfNumber(3)(3));
+console.log(getSquareOfNumber(4)(4));
+
+//output 
+32 
+48 
+64
+//output in console
+8
+27
+64
+
+
+
+//use of foreach function on array
+let animals = ['cat', 'rat', 'dog']
+
+//foreach function will run function(sayIsAnimal) once for each item in the array
+animals.forEach(hasFourLegs)
+
+function hasFourLegs(animal){
+    document.write(animal + ' has 4 legs.<br>')
+}
+
+//output
+cat has 4 legs.
+rat has 4 legs.
+dog has 4 legs.
