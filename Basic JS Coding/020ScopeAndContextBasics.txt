@@ -1,0 +1,245 @@
+//Scope is related to variables
+//Context is related to objects
+let name = "Rock";
+function displayName(){
+    console.log(name);
+}
+displayName(name);
+
+//Output in console
+Rock
+
+
+
+//Declared name variable inside function and displaying name variable value outside function
+function displayName(){
+    let name = "Rock";
+}
+displayName(name);
+console.log(name);
+
+//output in console (no output)
+
+
+
+//To view how same variable name inside every block gives different value
+let name = "bat oustide ";
+function displayName(){
+    let name = "cat inside function displayName";
+    if(true){
+        let name = "rat inside if";
+        console.log(name);
+    }
+    console.log(name);
+}
+displayName(name);
+console.log(name);
+
+//output in console
+rat inside if
+cat inside function displayName
+bat oustide 
+
+
+
+let name = "bat oustide ";
+function displayName(){
+    let name = "cat inside function displayName";
+    if(true){
+        //removed name inside if
+        console.log(name);
+    }
+    console.log(name);
+}
+displayName(name);
+console.log(name);
+
+//output in console
+cat inside function displayName
+cat inside function displayName
+bat oustide 
+
+
+
+let name = "bat oustide ";
+function displayName(){
+        //removed name inside displayName
+        if(true){
+        let name = "rat inside if";
+        console.log(name);
+    }
+    console.log(name);
+}
+displayName(name);
+console.log(name);
+
+//output in console
+rat inside if
+bat oustide 
+bat oustide 
+
+
+
+//removed name outside
+function displayName(){
+    let name = "cat inside function displayName";
+    if(true){
+        let name = "rat inside if";
+        console.log(name);
+    }
+    console.log(name);
+}
+displayName(name);
+console.log(name);
+
+//output in console (third name returns blank)
+rat inside if
+cat inside function displayName
+
+
+
+//removed name variable from code
+function displayName(){
+    if(true){
+        console.log(name);
+    }
+    console.log(name);
+}
+displayName(name);
+console.log(name);
+
+//output in console (no output since name is not declared)
+
+
+
+//Variable outside {} has a global scope i.e those variables can be accessed anywhere in code
+//Variable inside {} has a block scope i.e those variables can be accessed only in that block
+let name = "Global Rock";
+function displayName(){
+    let name = "Block Rock";
+    console.log("I m visible inside block and my name is " + name);
+}
+displayName(name);
+console.log("I m visible everywhere and my name is " + name);
+
+//output in console
+I m visible inside block and my name is Block Rock
+I m visible everywhere and my name is Global Rock
+
+
+
+//let vs var
+//let has block scope i.e those variables can be accessed only inside that block 
+//so let can have different values for same variable inside function decalred in multiple block such as if statement block
+//var has function scope i.e those variables can be accessed only inside that function
+//so var will have same value for same variable inside multiple block in the function 
+//With let every where we will have different name value
+let letName = "let Global Scope";
+function displayName(){
+    let letName = "let Function Scope";
+    if(true){
+        let letName = "let Block Scope";
+        console.log(letName);
+    }
+    console.log(letName);
+}
+displayName(letName);
+console.log(letName);
+
+//output in console
+let Block Scope
+let Function Scope
+let Global Scope
+
+
+
+//With var inside function we will get same value
+var varName = "var Global Scope"
+function displayName(){
+    var varName = "var Function Scope"
+    if(true){
+        var varName = "var Block Scope"
+        console.log(varName);
+    }
+    console.log(varName);
+}
+displayName(varName);
+console.log(varName);
+
+//output in console
+var Block Scope
+var Block Scope
+var Global Scope
+
+
+
+//Context is related to objects
+let studentObject = {
+    name : "Rock",
+    language : "JavaScript",
+    age : 24,
+    learningLanguage(){
+        console.log(this.name+ " learning " + this.language +".");
+    }
+}
+
+studentObject.learningLanguage();
+
+//output in console
+Rock learning JavaScript.
+
+
+
+
+//lets create function inside function of a object method and check to which object this points to
+//window is global object
+//this keyword points to object that executes the current function
+let studentObject = {
+    name : "Rock",
+    language : "JavaScript",
+    age : 24,
+    learningLanguage(){
+        function iAmFunctionNotMethod(){
+            console.log("Inside function of object method");
+            console.log(this);
+        }
+        //here there is no object infront of function iAmFunctionNotMethod 
+        //so global object (window) excutes iAmFunctionNotMethod function hence this points to window
+        iAmFunctionNotMethod();
+        console.log("Outside function of object method");
+        console.log(this);
+    }
+}
+//here studentObject excutes learningLanguage function hence this points to studentObject
+studentObject.learningLanguage();
+
+//output in console
+Inside function of object method
+Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+Outside function of object method
+{name: "Rock", language: "JavaScript", age: 24, learningLanguage: ƒ}
+
+
+
+//To understand why we need this
+let studentObject = {
+    name : "Rock",
+    language : "JavaScript",
+    age : 24
+}
+
+function progressingFast(){
+    console.log(this);
+    console.log(this.name+ " learned basics of " + this.language +" very quickly.");
+}
+//call method will allow to call function and also allow us to pass object that this will point to. 
+//calling function without object so call we assume global object(window) 
+progressingFast.call();
+//calling function with object so call will use studentObject
+progressingFast.call(studentObject);
+
+//output in console
+Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+learned basics of undefined very quickly.
+{name: "Rock", language: "JavaScript", age: 24}
+Rock learned basics of JavaScript very quickly.
