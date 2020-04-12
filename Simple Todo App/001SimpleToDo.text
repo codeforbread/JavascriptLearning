@@ -1,0 +1,101 @@
+########################
+<html>
+<head></head>
+<body>
+    <script src = "002SimpleToDoApp.js"></script>
+    <form id="firstForm">
+        <h1>To-Do App</h1>
+        <input type="text" autocomplete="off">
+        <button>Add item</button> 
+    </form>
+
+    <h3>Need To Do</h3>
+    <ul>
+        <li>Buy Apples <button>Delete</button> </li>
+        <li>Buy Mango <button>Delete</button> </li>
+        <li>Buy Grapes <button>Delete</button> </li>
+    </ul>
+    
+</body>
+</html>
+########################
+
+************************
+let formData = document.getElementById("firstForm");
+firstForm.addEventListener("click",function() {
+    alert("You clicked on the screen.");
+});
+************************
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+Uncaught ReferenceError: firstForm is not defined
+    at 002SimpleToDoApp.js:4
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+$$$$$$$$$$$$$$$$$$$$$$$$
+//Error is on line 25 . We named let variable as formData 
+//but while calling addEventListener we used variable name as firstForm
+
+let formData = document.getElementById("firstForm");
+formData.addEventListener("click",function() {
+    alert("You clicked on the screen.");
+});
+$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+
+########################
+<html>
+<head></head>
+<body>
+    <script src = "002SimpleToDoApp.js"></script>
+    <form id="firstForm">
+        <h1>To-Do App</h1>
+        <input type="text" autocomplete="off">
+        <button>Add item</button> 
+    </form>
+
+    <h3>Need To Do</h3>
+    <ul>
+        <li>Buy Apples <button>Delete</button> </li>
+        <li>Buy Mango <button>Delete</button> </li>
+        <li>Buy Grapes <button>Delete</button> </li>
+    </ul>
+    
+</body>
+</html>
+########################
+
+************************
+let formData = document.getElementById("firstForm");
+formData.addEventListener("click",function() {
+    alert("You clicked on the screen.");
+});
+************************
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+Uncaught TypeError: Cannot read property 'addEventListener' of null
+    at 002SimpleToDoApp.js:4
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+$$$$$$$$$$$$$$$$$$$$$$$$
+//Script is loading before body so keep script after content.
+//By placing the script from line 51 at the bottom of the page (99).
+<html>
+<head></head>
+<body>
+    <form id="firstForm">
+        <h1>To-Do App</h1>
+        <input type="text" autocomplete="off">
+        <button>Add item</button> 
+    </form>
+
+    <h3>Need To Do</h3>
+    <ul>
+        <li>Buy Apples <button>Delete</button> </li>
+        <li>Buy Mango <button>Delete</button> </li>
+        <li>Buy Grapes <button>Delete</button> </li>
+    </ul>
+    <script src = "002SimpleToDoApp.js"></script>
+</body>
+</html>
