@@ -1,0 +1,6 @@
+##### To create a package.json file #####
+JavascriptLearning/z001SimpleExpressNodeApp $ sudo npm init
+
+
+##### To install Express in the current directory and save it in the dependencies list #####
+JavascriptLearning/z001SimpleExpressNodeApp $ sudo npm install express
