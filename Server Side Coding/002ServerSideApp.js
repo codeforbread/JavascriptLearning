@@ -68,5 +68,3 @@ simpleNodeApp.listen(3000);
 
 
 
-//http was part of node
-//express is not part of node ie we used npm install express
