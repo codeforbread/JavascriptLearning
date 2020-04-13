@@ -1,0 +1,153 @@
+//A server accept request and returns response.
+//A server is needed to recieve and send data.
+//A server provides security protection
+
+/JavascriptLearning$ node
+> 2+2
+4
+> myVar = 7
+7
+> let myNewVar = 9
+undefined
+> myNewVar + 5
+14
+> myVar + 5
+12
+> myNewVar +myVar
+16
+
+
+
+console.log("HI ROck");
+
+/JavascriptLearning/Server Side Coding$ node 002ServerSideApp.js
+HI ROck
+
+
+
+//working with res.
+//res will send response when that url is pressed .
+let http = require("http");
+let simpleNodeApp = http.createServer(function(req,res){
+    res.end("Hello, welcome to my website");
+})
+simpleNodeApp.listen(3000);
+
+//output in http://localhost:3000/
+Hello, welcome to my website
+
+//output in localhost:3000/contact
+Hello, welcome to my website
+
+
+
+//Check url which we are using in browser 
+let http = require("http");
+let simpleNodeApp = http.createServer(function(req,res){
+    console.log(req.url);
+    res.end("Hello, welcome to my website");
+})
+simpleNodeApp.listen(3000);
+
+
+//url in browser http://localhost:3000/contact
+
+//output in console
+JavascriptLearning/Server Side Coding$ node 002ServerSideApp.js
+/contact
+
+
+//url in browser http://localhost:3000/about
+
+//output in console
+JavascriptLearning/Server Side Coding$ node 002ServerSideApp.js
+/contact
+/favicon.ico
+/about
+
+
+//url in browser http://localhost:3000/home
+
+//output in console
+JavascriptLearning/Server Side Coding$ node 002ServerSideApp.js
+/contact
+/favicon.ico
+/about
+/favicon.ico
+/home
+
+
+//url in browser http://localhost:3000/
+
+//output in console
+JavascriptLearning/Server Side Coding$ node 002ServerSideApp.js
+/contact
+/favicon.ico
+/about
+/favicon.ico
+/home
+/favicon.ico
+/
+
+
+
+
+//Display different message for different route
+let http = require("http");
+let simpleNodeApp = http.createServer(function(req,res){
+    if(req.url == "/"){
+        res.end("Hello, welcome to home page");
+    }
+    if(req.url == "/about"){
+        res.end("Hello, welcome to about page");
+    }
+    if(req.url == "/contact"){
+        res.end("Hello, welcome to contact page");
+    }
+})
+simpleNodeApp.listen(3000);
+
+//url in browser 
+http://localhost:3000/
+//output in browser
+Hello, welcome to home page
+
+//url in browser 
+http://localhost:3000/about
+//output in browser
+Hello, welcome to about page
+
+//url in browser 
+http://localhost:3000/contact
+//output in browser
+Hello, welcome to contact page
+
+//url in browser (since terms route is not present it shows same last data of contact)
+http://localhost:3000/terms
+//output in browser
+Hello, welcome to contact page
+
+
+
+
+//To handle if some route does not exist
+let http = require("http");
+let simpleNodeApp = http.createServer(function(req,res){
+    if(req.url == "/"){
+        res.end("Hello, welcome to home page");
+    }
+    if(req.url == "/about"){
+        res.end("Hello, welcome to about page");
+    }
+    if(req.url == "/contact"){
+        res.end("Hello, welcome to contact page");
+    }
+    res.end("Sorry , page does not exist");
+})
+simpleNodeApp.listen(3000);
+
+
+//url in browser (since terms route is not present it shows proper message)
+http://localhost:3000/terms
+//output in browser
+Sorry , page does not exist
