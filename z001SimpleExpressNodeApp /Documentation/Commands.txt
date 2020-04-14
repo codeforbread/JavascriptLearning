@@ -4,3 +4,17 @@ JavascriptLearning/z001SimpleExpressNodeApp $ sudo npm init
 
 ##### To install Express in the current directory and save it in the dependencies list #####
 JavascriptLearning/z001SimpleExpressNodeApp $ sudo npm install express
+
+
+##### To run on server we use node filename #####
+/JavascriptLearning/z001SimpleExpressNodeApp $ node nodeExpressApp
+
+
+##### To create git ignore file #####
+/JavascriptLearning/z001SimpleExpressNodeApp $ touch .gitignore
+Just add folders and files starting from current directory
+e.g:- /JavascriptLearning/z001SimpleExpressNodeApp/node_modules
+we want to ignore node_modules folder and our gitignore file is in z001SimpleExpressNodeApp/ folder then we
+node_modules/
+
+
